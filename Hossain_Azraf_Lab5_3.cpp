@@ -12,12 +12,11 @@ using namespace std;
 int main()
 {
     int x = 0, y = 0, input = 25;
-
+    srand(time(0));
 
     int i;
     for(i=1; i <= input; i++)
     {
-        srand(time(0));
         int direct;
         direct = rand() % 4 + 1; //random number between 1 and 4 so each is 25% //probable
         //1 means North, 2 means South, 3 means East and 4 means West
@@ -25,6 +24,7 @@ int main()
         {
             case 1:
                 y = y + 1;
+                
                 break;
 
             case 2:
