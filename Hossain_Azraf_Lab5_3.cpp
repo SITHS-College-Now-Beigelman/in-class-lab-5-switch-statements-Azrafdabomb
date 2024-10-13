@@ -14,7 +14,7 @@ int main()
     int x = 0, y = 0, input = 25;
     srand(time(0));
 
-    int i;
+/*    int i;
     for(i=1; i <= input; i++)
     {
         int direct;
@@ -24,7 +24,6 @@ int main()
         {
             case 1:
                 y = y + 1;
-                
                 break;
 
             case 2:
@@ -40,6 +39,36 @@ int main()
                 break;
         }
     }
-    cout << x << ' ' <<  y;
+    cout << x << ' ' <<  y << endl;
+    // Robot's placement after 25 steps, -1 -6 (one step south and six steps west of the starting point)
+*/
+    x = 0;
+    y = 0;
+    int direct;
+    direct = rand() % 4 + 1; //random number between 1 and 4 so each is 25% //probable
+    int steps = 0;
+    while ((x != 2) && (y != 3))
+    {    
+        switch(direct)
+        {
+            case 1:
+                steps = steps + 1;
+                y = y + 1;
+
+            case 2:
+                steps = steps + 1;
+                y = y - 1;
+            
+            case 3:
+                steps = steps + 1;
+                x = x + 1;
+                
+            case 4:
+                steps = steps + 1;
+                x = x - 1;
+                
+        }
+    }
+    cout << steps;
     return 0;
 }
